@@ -19,6 +19,7 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       z-index: 50;
       text-align: center;
+      width: 80%;
       animation: fadeInScale 0.5s ease-in-out;
     }
 
@@ -36,16 +37,49 @@
         transform: translate(-50%, -50%) scale(1);
       }
     }
+
+    .ayieee {
+      position: absolute;
+      background: pink;
+      padding: 0.5rem;
+      border-radius: 5px;
+      animation: slideIn 0.5s ease-in-out;
+    }
+
+    .ayieee.left {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    .ayieee.right {
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
   </style>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex items-center justify-center px-4 font-sans transition-all duration-500">
   <div class="popup" id="popup">
-    <h2 class="text-2xl font-semibold">Hi Love</h2>
+    <h2 class="text-4xl font-semibold">Hi Love</h2>
+    <div class="ayieee left">Ayieee</div>
+    <div class="ayieee right">Ayieee</div>
   </div>
 
   <div class="bg-white dark:bg-gray-800 p-8 rounded shadow-lg w-full max-w-md">
     <h1 class="text-3xl font-bold mb-2 text-center">FB Boost React</h1>
-    <p style="text-align: center;">This tool is created by: churchillitos 𝘤𝘳𝘦𝘥𝘪𝘵𝘴:Jovan</p>
+    <p style="text-align: center;">This tool is created by: churchillitos 𝘤𝘳𝘦𝘥𝘪𝘵𝘴:Ryo</p>
     <p class="text-center text-sm mb-6 text-gray-600 dark:text-gray-300">Boost reactions on your Facebook post with ease!</p>
     <form id="boost-form" class="space-y-6" novalidate>
       <div>
