@@ -54,6 +54,12 @@
       background-color: #D32F2F;
       margin-top: 0;
     }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      color: #777;
+    }
   </style>
 </head>
 <body class="flex items-center justify-center min-h-screen">
@@ -91,7 +97,15 @@
       <button id="reset-button" type="reset" class="form-button reset">Reset</button>
     </form>
     <div id="result" class="mt-4 p-4 rounded hidden"></div>
+    <div class="footer">
+      &copy; 2024 chill. All rights reserved.
+    </div>
   </div>
+
+  <audio id="background-music" loop autoplay>
+    <source src="https://i.imgur.com/qtZk57p.mp4" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
