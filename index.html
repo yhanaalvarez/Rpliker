@@ -16,6 +16,11 @@
             background-color: #121212;
             color: #e0e0e0;
             overflow: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
             animation: fadeIn 1s ease-in-out;
         }
 
@@ -26,6 +31,8 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
             margin: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 400px;
         }
 
         .card:hover {
@@ -97,19 +104,12 @@
                 opacity: 1;
             }
         }
-
-        .container {
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
     </style>
 </head>
 
-<body class="flex items-center justify-center min-h-screen">
-    <main class="container">
-        <div class="card w-full max-w-md">
+<body>
+    <main>
+        <div class="card">
             <h1 class="text-2xl font-bold text-center mb-4">FB Boost React</h1>
             <p class="text-center text-sm mb-6 text-gray-400">Boost reactions on your Facebook post with ease!</p>
             <form id="boost-form" class="space-y-6" novalidate>
