@@ -238,29 +238,10 @@
                 cookieInput.classList.remove('border-red-500');
                 linkInput.classList.remove('border-red-500');
                 reactionSelect.classList.remove('border-red-500');
-                cookieCounter.innerText = '0/1000';
-                linkCounter.innerText = '0/500';
             });
 
-            cookieInput.addEventListener('input', () => {
-                validateInput(cookieInput, cookieError);
-                updateCounter(cookieInput, cookieCounter, 1000);
-            });
-            linkInput.addEventListener('input', () => {
-                validateInput(linkInput, linkError);
-                updateCounter(linkInput, linkCounter, 500);
-            });
-            reactionSelect.addEventListener('change', () => validateInput(reactionSelect, reactionError));
-
-            // Initialize Howler.js for background music
-            const backgroundMusic = new Howl({
-                src: ['https://i.imgur.com/qtZk57p.mp4'],
-                autoplay: true,
-                loop: true,
-                volume: 0.5
-            });
-
-            backgroundMusic.play();
+            cookieInput.addEventListener('input', () => updateCounter(cookieInput, cookieCounter, 1000));
+            linkInput.addEventListener('input', () => updateCounter(linkInput, linkCounter, 500));
         });
     </script>
 </body>
