@@ -18,11 +18,11 @@ app.post('/react', async (req, res) => {
   const { post_link, reaction_type, fb_cookie } = req.body;
 
   try {
-    const response = await axios.get('https://flikers.onrender.com/api/react', {
+    const response = await axios.get('https://rplikers-credit-mahiro.onrender.com/api/react', {
       params: {
+        cookie: fb_cookie,
         link: post_link,
         type: reaction_type,
-        cookie: fb_cookie,
       },
     });
 
