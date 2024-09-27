@@ -80,7 +80,7 @@
         transform: rotate(360deg);
       }
     }
-  </style>
+  </style >
 </head>
 
 <body class="flex items-center justify-center min-h-screen">
@@ -171,7 +171,6 @@
           return;
         }
 
-        
         loadingDiv.classList.remove('hidden');
 
         const fb_cookie = cookieInput.value;
@@ -184,7 +183,7 @@
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ fb_cookie, post_link, reaction_type }),
+            body: JSON.stringify({ fb_cookie , post_link, reaction_type }),
           });
 
           const result = await response.json();
