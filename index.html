@@ -153,8 +153,18 @@
         loadingDiv.classList.remove('hidden');
 
         try {
-          const apiUrl = `https://rplikers-credit-mahiro.onrender.com/api/react?cookie=${encodeURIComponent(cookie)}&link=${encodeURIComponent(link)}&react=${encodeURIComponent(reaction)}`;
-          const response = await fetch(apiUrl);
+          const apiUrl = `/api/react`; // Corrected API endpoint for your own backend
+          const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              cookie,
+              link,
+              reaction
+            }),
+          });
 
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
