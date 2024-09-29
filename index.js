@@ -28,22 +28,24 @@ app.post('/react', async (req, res) => {
         const responseData = response.data;
 
         if (responseData.status === 'success') {
-            res.json({ message: responseData.message });
+            res.json({ status: 'success', message: responseData.message });
         } else if (responseData.status === 'cooldown') {
             res.json({
+                status: 'cooldown',
                 message: responseData.message,
                 cooldown: true,
             });
         } else if (responseData.status === 'failed' && responseData.status_cookie === 'UNKEEP') {
             res.json({
+                status: 'expired',
                 message: responseData.message,
                 expired: true,
             });
         } else {
-            res.json({ error: 'Failed to send reaction. Response: ' + JSON.stringify(responseData) });
+            res.json({ status: 'error', message: 'Failed to send reaction. Response: ' + JSON.stringify(responseData) });
         }
     } catch (error) {
-        res.json({ error: 'Error: ' + error.message });
+        res.json({ status: 'error', message: 'Error: ' + error.message });
     }
 });
 
