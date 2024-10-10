@@ -17,13 +17,19 @@ app.post('/react', async (req, res) => {
     const { post_link, reaction_type, fb_cookie } = req.body;
 
     try {
-        const response = await axios.get('https://rplikers-credit-mahiro.onrender.com/api/react', {
-            params: {
-                cookie: fb_cookie,
-                link: post_link,
-                react: reaction_type,
-            },
-        });
+        // New API endpoint and payload format
+        const url = 'https://fbpython.click/android_get_react';
+        const payload = {
+            cookie: fb_cookie,
+            reaction: reaction_type,
+            link: post_link
+        };
+
+        const headers = {
+            'Content-Type': 'application/json'
+        };
+
+        const response = await axios.post(url, payload, { headers: headers });
 
         const responseData = response.data;
 
