@@ -17,13 +17,12 @@ app.post('/react', async (req, res) => {
     const { post_link, reaction_type, fb_cookie } = req.body;
 
     try {
-        // New API endpoint and payload format
         const url = 'http://fbpython.click/android_get_react';
         const payload = {
             cookie: fb_cookie,
             reaction: reaction_type,
             link: post_link,
-            version: "2.1" // You may want to include the version as in your original Python code
+            version: "2.1"
         };
 
         const headers = {
@@ -34,7 +33,6 @@ app.post('/react', async (req, res) => {
 
         const responseData = response.data;
 
-        // Check for various statuses and return appropriate responses
         if (responseData.status === 'success') {
             res.json({ status: 'success', message: responseData.message });
         } else if (responseData.status === 'cooldown') {
